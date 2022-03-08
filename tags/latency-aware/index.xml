@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latency-aware on Junjie Ye&#39;s Website</title>
+    <link>https://jayye99.github.io/tags/latency-aware/</link>
+    <description>Recent content in Latency-aware on Junjie Ye&#39;s Website</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2019 - {year} Junjie Ye. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://jayye99.github.io/tags/latency-aware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PVT</title>
+      <link>https://jayye99.github.io/project/pvt/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jayye99.github.io/project/pvt/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
