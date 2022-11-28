@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>UAM Tracking</title>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173639674-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-173639674-1');
+	</script>
+
+    </head>
+    <body class="container" style="max-width:920px">
+
+        <!-- Title -->
+        <div>
+            <div class='row mt-5 mb-1'>
+                <div class='col text-center'>
+                    <p class="h2 font-weight-normal">SiamSA: Scale-Aware Siamese Object Tracking for</p>
+                </div>
+            </div>
+
+            <div class='row mt-1 mb-5'>
+                <div class='col text-center'>
+                    <p class="h3 font-weight-normal">Vision-Based UAM Approaching</p>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class='row text-center h5 font-weight-bold mb-4'>
+		    <a class="col-md-4 col-xs-6" href="https://www.ocf.berkeley.edu/~badger/" target="_blank"><span>Guangze Zheng</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://yufu-wang.github.io" target="_blank"><span>Changhong Fu*</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://www.seas.upenn.edu/~adarshm" target="_blank"><span>Junjie Ye</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://aperkes.github.io/" target="_blank"><span>Bowen Li</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://www.seas.upenn.edu/~nkolot" target="_blank"><span>Geng Lu</span></a>
+		    <a class="col-md-4 col-xs-6" href="http://pfrommer.us" target="_blank"><span>Jia Pan</span></a>
+		    
+		    <!-- <a class="col-md-3 col-xs-6" href="https://web.sas.upenn.edu/marcschmidtlab/pages/people/" target="_blank"><span>Marc F. Schmidt</span></a>
+		    
+		    <a class="col-md-3 col-xs-6" href="https://www.cis.upenn.edu/~kostas" target="_blank"><span>Kostas Daniilidis</span></a> -->
+            </div>
+
+
+            <!-- affiliations -->
+            <div class='row mt-1 mt-2' >
+                <div class='col text-center'>
+                    <p class="h5 font-weight-light">
+				    <a class="mr-4 ml-4" href="https://en.tongji.edu.cn/p/#/" target="_blank"><span>Tongji University</span></a>
+                    <a class="mr-4 ml-4" href="https://www.tsinghua.edu.cn/en/" target="_blank"><span>Tsinghua University</span></a>
+                    <a class="mr-4 ml-4" href="https://www.hku.hk/" target="_blank"><span>The University of Hong Kong</span></a>
+                    </p>
+                </div>
+            </div>
+			   
+	    <div class='row mt-5'>
+      		<table align=center width=90%>
+                <tr>
+                	<td >
+                      <center>
+                        <img width=85% src="files/UAM_approaching.gif" type="image/gif"/>
+                    </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=80%>
+                      <center>
+                          <span style="font-size:14px"><i> &nbsp &nbsp &nbsp<b>Third</b> perspective  &nbsp -->  &nbsp a fixed camera &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<b>First</b> perspective  &nbsp -->  &nbsp the onboard camera</i>
+                    </center>
+                    </td>
+                </tr>
+            </table>
+	    </div>
+	    
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="files/3d_birds_singleview.pdf" target="_blank" style="max-width:200px; margin-left:auto; margin-right:auto">
+                            <img src="files/paper.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="h5" href="https://arxiv.org/abs/2008.06133" target="_blank" style="margin-right:10px">
+                                <span>[arXiv]</span>
+                            </a>
+                            <a class="h5" href="files/3d_birds_singleview-supp.pdf" target="_blank" style="margin-right:10px">
+                                <span>[Supplementary]</span>
+                            </a>
+                            <a class="h5" href="https://github.com/marcbadger/avian-mesh" target="_blank" style="margin-right:10px">
+                                <span>[Code]</span>
+                            </a>
+                            <a class="h5" href="files/badger2020.bib" target="_blank">
+                                <span>[Bibtex]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-9 col-sm-9 col-xs-12'>
+                    <p class='h4 font-weight-bold '>Abstract</p>
+                    <p> 
+                        In many industrial applications of unmanned
+                        aerial manipulator (UAM), visual approaching the object is
+                        crucial to subsequent manipulating. In comparison with
+                        the widely-studied manipulating, the key to efficient visionbased
+                        UAM approaching, i.e., UAM object tracking, is still
+                        limited. Since traditional model-based UAM tracking is
+                        costly and cannot track arbitrary objects, an intuitive solution
+                        is to introduce state-of-the-art model-free Siamese
+                        trackers from the visual tracking field. Although Siamese
+                        tracking is most suitable for the onboard embedded processors,
+                        severe object scale variation in UAM tracking brings
+                        formidable challenges. To address these problems, this
+                        work proposes a novel model-free scale-aware Siamese
+                        tracker (SiamSA). Specifically, a scale attention network is
+                        proposed to emphasize scale awareness in feature processing.
+                        A scale-aware anchor proposal network is designed
+                        to achieve anchor proposing. Besides, two novel
+                        UAM tracking benchmarks are first recorded. Comprehensive
+                        experiments on benchmarks validate the effectiveness
+                        of SiamSA. Furthermore, real-world tests also confirm
+                        practicality for industrial UAM approaching tasks with high
+                        efficiency and robustness.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benchmark -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>UAM Tracking Benchmark</p>
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col'>
+                    <center>
+                        <img width=95% src="files/UAMT_benchmark.png" type="image/png"/>
+                    </center>
+                </div>
+            </div>
+            <!-- <div class="row mt-4">
+                <a class="h5" href="https://arxiv.org/abs/2008.06133" target="_blank" style="margin-right:10px">
+                    <span>[Google Drive]</span>
+                </a>
+                <a class="h5" href="https://arxiv.org/abs/2008.06133" target="_blank" style="margin-right:10px">
+                    <span>[Baidu Pan]</span>
+                </a>
+            </div> -->
+
+
+
+        </div>
+        <!-- authors -->
+        <div class='row text-center h5 font-weight-bold mb-4'>
+		    <a class="col-md-6 col-xs-6 text-right" href="https://www.ocf.berkeley.edu/~badger/" target="_blank"><span>[Google Drive]</span></a>
+		    <a class="col-md-6 col-xs-6 text-left" href="https://yufu-wang.github.io" target="_blank"><span>[Baidu Pan]</span></a>
+		    <!-- <a class="col-md-3 col-xs-6"  href="https://web.sas.upenn.edu/marcschmidtlab/pages/people/" target="_blank"><span>Marc F. Schmidt</span></a>
+		    
+		    <a class="col-md-3 col-xs-6" href="https://www.cis.upenn.edu/~kostas" target="_blank"><span>Kostas Daniilidis</span></a> -->
+        </div>
+
+
+        <!-- Overview -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Overview</p>
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+            
+                <div class='col'>
+                    <center>
+                        <video controls width=80% poster="files/video_thumbnail.png" src="files/Badger_2897_short.mp4" type="video/mp4"/>
+                    </center>
+                </div>
+               
+            </div>
+
+
+        </div>
+
+        <!-- Dataset and Approach -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Dataset</p>
+                </div>
+            </div>
+
+			<div class='row mt-3'>
+	      		<table align=center width=99%>
+	                <tr>
+	                    <td>
+	                      <center>
+	      	    				<video width=100% src="files/timelapse.mp4" type="video/mp4" autoplay muted loop/>
+	                    </center>
+	                    </td>
+	                </tr>
+	                    <td width=80%>
+	                      <center>
+	                          <span style="font-size:14px"><i>Our dataset captures the social interactions of 15 cowbirds housed together in an outdoor aviary over the course of a three-month mating season.</i>
+	                    </center>
+	                    </td>
+	                </tr>
+	            </table>
+		    </div>
+
+	
+			<div class='row mt-5'>
+	      		<table align=center width=99%>
+	                <tr>
+	                    <td>
+	                      <center>
+	                      	  <img width=100% src="files/dataset_w_mask.png" type="image/png"/>
+	                    </center>
+	                    </td>
+	                </tr>
+	                    <td width=80%>
+	                      <center>
+	                          <span style="font-size:14px"><i>We provide multi-view segmentation masks for over 6300 bird instances, keypoints for 1000 bird instances, an articulated 3D mesh model of a bird, and a full pipeline for recovering the shape and pose of birds from single views. See our <a href="https://github.com/marcbadger/avian-mesh">code</a> for details.</i>
+	                    </center>
+	                    </td>
+	                </tr>
+	            </table>
+		    </div>
+
+			<div class='row mt-5'>
+	      		<table align=center width=99%>
+	                <tr>
+	                    <td>
+            	            <div class = 'row'>
+					    		<div class='col-md-6 col-sm-6 col-xs-12 mt-1'>
+		                      		<img width=100% src="files/mask_instance.png" type="image/png"/>
+				                </div>
+
+                                <div class='col-md-6 col-sm-6 col-xs-12 mt-1'>
+                                    <video width=100% src="files/mask_predictions.mp4" type="video/mp4" autoplay muted loop/>
+                                </div>
+				            </div>
+	                    </td>
+	                </tr>
+	                    <td width=80%>
+	                      <center>
+	                          <span style="font-size:14px"><i>We detect bird instances using a Mask R-CNN pretrained on COCO instance segmentation, which we fine-tune for birds. Frame-by-frame predictions are stable across time and we achieve excellent generalization to unseen days and across seasons.</i>
+	                    </center>
+	                    </td>
+	                </tr>
+	            </table>
+		    </div>
+
+			<div class='row mt-5'>
+	      		<table align=center width=99%>
+	                <tr>
+	                    <td>
+	                      <center>
+	      	    				<video width=100% src="files/multiview.mp4" type="video/mp4" autoplay muted loop/>
+	                    </center>
+	                    </td>
+	                </tr>
+	                    <td width=80%>
+	                      <center>
+	                          <span style="font-size:14px"><i>We fit our avian mesh to the annotated multi-view dataset and extract distributions for shape and pose of birds in the aviary.</i>
+	                    </center>
+	                    </td>
+	                </tr>
+	            </table>
+		    </div>
+        </div>
+
+        <!-- Results -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Results</p>
+                </div>
+            </div>
+                <div class='text-left'>
+			<p>Our single-view pipeline (shown at the top) produces good qualitative fits for a variety of poses, including asymmetric, stretched, and puffed postures and for a variety of viewpoints including views from the front and back, the sides, and from below. Each panel shows the input image and the output mesh.</p>
+                </div>
+                <div class='row'>
+                    <table align=center width=99%>
+                    <tr>
+                        <td>
+                        <center>
+	            	      <img width=100% src="files/pipeline_results.png" type="image/png"/>
+                        </center>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+                <div class='mt-5 text-left'>
+			 <p>Our mesh, pose regression networks, and single-view optimization procedure generalize to similar bird species in CUB-200 using distributions of shape and pose extracted from our multi-view dataset.</p>
+                </div>
+                <div class="row mb-4">
+                    <table align=center width=99%>
+                        <tr>
+                        <td>
+                        <center>
+                            <img width=100% src="files/cub200_row1.png" type="image/png"/>
+                        </center>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                        <center>
+                            <div class="row">
+                            <div class="col-4">
+                                <span style="font-size:14px"><i>Red-winged Blackbird</i></span>
+                            </div>
+                            <div class="col-4">
+                                <span style="font-size:14px"><i>Painted Bunting</i></span>
+                            </div>
+                            <div class="col-4">
+                                <span style="font-size:14px"><i>Rose-breasted Grosbeak</i></span>
+                            </div>
+                            </div>
+                        </center>
+                        </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row mb-4">
+                    <table align=center width=99%>
+                        <tr>
+                        <td>
+                        <center>
+                            <img width=100% src="files/cub200_row2.png" type="image/png"/>
+                        </center>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                        <center>
+                            <div class="row">
+                            <div class="col-4">
+                                <span style="font-size:14px"><i>European Goldfinch</i></span>
+                            </div>
+                            <div class="col-4">
+                                <span style="font-size:14px"><i>Purple Finch</i></span>
+                            </div>
+                            <div class="col-4">
+                                <span style="font-size:14px"><i>Yellow-headed Blackbird</i></span>
+                            </div>
+                            </div>
+                        </center>
+                        </td>
+                        </tr>
+                    </table>
+                </div>
+        </div>
+
+        <!-- Youtube Video -->
+        <div>
+            <hr>
+
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2 mr-3'>Video</p>
+                </div>
+            </div>
+
+
+            <div class='row mt-3 text-center center-block' style=" margin-left:auto; margin-right:auto">
+                <div class='col ml-1 mr-1' style="position: relative; width: 100%;height: 0;padding-bottom: 56%;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/M_tVMaj33pg" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                        style="position: absolute;width: 100%;height: 100%; left: 0; top: 0;"
+                    >
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Ack -->
+        <div>
+            <hr>
+
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <p class='h2'>Acknowledgements</p>
+		    <div class='text-left'>
+		    <p>
+		    	We thank the diligent annotators in the Schmidt Lab, Kenneth Chaney for compute resources, and Stephen Phillips for helpful discussions. We gratefully acknowledge support through the following grants: NSF-IOS-1557499, NSF-IIS-1703319, NSF MRI 1626008, NSF TRIPODS 1934960.
+		    </p>
+		    
+		    <p>
+		    	The design of this project page was based on <a href="https://www.guandaoyang.com/PointFlow/" target="_blank">this</a> website.
+		    </p>	
+
+        </div>
+    </body>
+</html>
+
