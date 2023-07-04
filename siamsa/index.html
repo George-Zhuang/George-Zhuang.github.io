@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>UAM Tracking</title>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173639674-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-173639674-1');
+	</script>
+
+    </head>
+    <body class="container" style="max-width:920px">
+
+        <!-- Title -->
+        <div>
+            <div class='row mt-5 mb-1'>
+                <div class='col text-center'>
+                    <p class="h2 font-weight-normal">SiamSA: Scale-Aware Siamese Object Tracking for</p>
+                </div>
+            </div>
+
+            <div class='row mt-1 mb-5'>
+                <div class='col text-center'>
+                    <p class="h3 font-weight-normal">Vision-Based UAM Approaching</p>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class='row text-center h5 font-weight-bold mb-4'>
+		    <a class="col-md-4 col-xs-6" href="https://www.ocf.berkeley.edu/~badger/" target="_blank"><span>Guangze Zheng</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://yufu-wang.github.io" target="_blank"><span>Changhong Fu*</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://www.seas.upenn.edu/~adarshm" target="_blank"><span>Junjie Ye</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://aperkes.github.io/" target="_blank"><span>Bowen Li</span></a>
+		    <a class="col-md-4 col-xs-6" href="https://www.seas.upenn.edu/~nkolot" target="_blank"><span>Geng Lu</span></a>
+		    <a class="col-md-4 col-xs-6" href="http://pfrommer.us" target="_blank"><span>Jia Pan</span></a>
+		    
+		    <!-- <a class="col-md-3 col-xs-6" href="https://web.sas.upenn.edu/marcschmidtlab/pages/people/" target="_blank"><span>Marc F. Schmidt</span></a>
+		    
+		    <a class="col-md-3 col-xs-6" href="https://www.cis.upenn.edu/~kostas" target="_blank"><span>Kostas Daniilidis</span></a> -->
+            </div>
+
+
+            <!-- affiliations -->
+            <div class='row mt-1 mt-2' >
+                <div class='col text-center'>
+                    <p class="h5 font-weight-light">
+				    <a class="mr-4 ml-4" href="https://en.tongji.edu.cn/p/#/" target="_blank"><span>Tongji University</span></a>
+                    <a class="mr-4 ml-4" href="https://www.tsinghua.edu.cn/en/" target="_blank"><span>Tsinghua University</span></a>
+                    <a class="mr-4 ml-4" href="https://www.hku.hk/" target="_blank"><span>The University of Hong Kong</span></a>
+                    </p>
+                </div>
+            </div>
+			   
+	    <div class='row mt-5'>
+      		<table align=center width=90%>
+                <tr>
+                	<td >
+                      <center>
+                        <img width=85% src="files/UAM_approaching.gif" type="image/gif"/>
+                    </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=80%>
+                    <center>
+                        <span style="font-size:14px"><i> &nbsp &nbsp &nbsp<b>Third</b> perspective  &nbsp -->  &nbsp a fixed camera &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<b>First</b> perspective  &nbsp -->  &nbsp the onboard camera</i>
+                    </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=80%>
+                    <center>
+                        <span style="font-size:14px"><i>A Demo for unmanned aerial manipulator visual tracking when approaching the object.</i>
+                    </center>
+                    </td>  
+                </tr>
+            </table>
+	    </div>
+	    
+        <!-- Benchmark -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>UAM Tracking Benchmark</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-12 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class='row mt-3'>
+                        <table align=center width=90%>
+                            <tr>
+                                <td >
+                                <center>
+                                    <img width=100% src="files/UAMT_benchmark.png" type="image/png"/>
+                                </center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width=80%>
+                                <center>
+                                    <span style="font-size:14px"><i>12 kinds of challenges involved in UAM tracking.</i>
+                                </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- <div class='col-md-2 col-sm-9 col-xs-12 mt-5'>
+                    <p class='h5 font-weight-bold '><span class="font-italic">16</span> objects</p>
+                    <p class='h5 font-weight-bold '><span class="font-italic">12</span> attributes</p>
+                </div> -->
+            </div>
+        </div>
+
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-7 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="https://github.com/vision4robotics/SiamSA" target="_blank" style="max-width:600px; margin-left:auto; margin-right:auto">
+                            <img src="files/sv.png" alt="paper-snapshot" class="img-thumbnail" width="80%" >
+                        </a>
+                    </div>
+                </div>
+                <div class='col-md-5 col-sm-9 col-xs-12 text-center mt-3'>
+                    <div class="row mt-5">
+                    <p class='h4 font-weight-bold'>UAMT100 <span class="h6">-- 100 image sequences</span></p>
+                    <a class="h5 col-md-6 col-xs-6 mt-2 text-left" href="https://drive.google.com/file/d/1WD5sPkwqj7E63bDFQQsmCxLKP_CM_D1I/view?usp=sharing" target="_blank"><span>[Google Drive]</span></a>
+		            <a class="h5 col-md-6 col-xs-6 mt-2 text-left" href="https://pan.baidu.com/s/1PBnlZEbgRVXYFxVWmzqtdw?pwd=v4ra" target="_blank"><span>[Baidu Pan]</span></a>
+                    </div>
+                    <div class="row mt-4">
+                    <p class='h4 font-weight-bold'>UAMT20L <span class="h6">-- 20 long image sequences</span></p>
+                    <a class="h5 col-md-6 col-xs-6 text-left" href="https://drive.google.com/file/d/1o4BiGOLk6segF7kHLhGrhWxCbOKOarTA/view?usp=sharing" target="_blank"><span>[Google Drive]</span></a>
+		            <a class="h5 col-md-6 col-xs-6 text-left" href="https://pan.baidu.com/s/1RtKr2EVF2c6l6mkhli8kGg?pwd=v4ra" target="_blank"><span>[Baidu Pan]</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="" target="_blank" style="max-width:200px; margin-left:auto; margin-right:auto">
+                            <img src="files/TII.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="h5" href="https://ieeexplore.ieee.org/document/9980457" target="_blank" style="margin-right:10px">
+                                <span>[Paper]</span>
+                            </a>
+                            <a class="h5" href="https://github.com/vision4robotics/SiamSA" target="_blank" style="margin-right:10px">
+                                <span>[Code]</span>
+                            </a>
+                            <a class="h5" href="files/TII.bib" target="_blank">
+                                <span>[Bibtex]</span>
+                            </a>
+                            <a class="h5" href="https://www.youtube.com/watch?v=Fi6kESBBpnk" target="_blank">
+                                <span>[Video]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-9 col-sm-9 col-xs-12'>
+                    <p class='h4 font-weight-bold '><span class="font-italic">TII 2022</span> Abstract</p>
+                    <p> 
+                        In many industrial applications of unmanned
+                        aerial manipulator (UAM), visual approaching the object is
+                        crucial to subsequent manipulating. In comparison with
+                        the widely-studied manipulating, the key to efficient visionbased
+                        UAM approaching, i.e., UAM object tracking, is still
+                        limited. Since traditional model-based UAM tracking is
+                        costly and cannot track arbitrary objects, an intuitive solution
+                        is to introduce state-of-the-art model-free Siamese
+                        trackers from the visual tracking field. Although Siamese
+                        tracking is most suitable for the onboard embedded processors,
+                        severe object scale variation in UAM tracking brings
+                        formidable challenges. To address these problems, this
+                        work proposes a novel model-free scale-aware Siamese
+                        tracker (SiamSA). Specifically, a scale attention network is
+                        proposed to emphasize scale awareness in feature processing.
+                        A scale-aware anchor proposal network is designed
+                        to achieve anchor proposing. Besides, two novel
+                        UAM tracking benchmarks are first recorded. Comprehensive
+                        experiments on benchmarks validate the effectiveness
+                        of SiamSA. Furthermore, real-world tests also confirm
+                        practicality for industrial UAM approaching tasks with high
+                        efficiency and robustness.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="https://arxiv.org/abs/2211.14564" target="_blank" style="max-width:200px; margin-left:auto; margin-right:auto">
+                            <img src="files/IROS.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="h5" href="https://arxiv.org/abs/2211.14564" target="_blank" style="margin-right:10px">
+                                <span>[arXiv]</span>
+                            </a>
+                            <a class="h5" href="https://github.com/vision4robotics/SiamSA" target="_blank" style="margin-right:10px">
+                                <span>[Code]</span>
+                            </a>
+                            <a class="h5" href="files/IROS.bib" target="_blank">
+                                <span>[Bibtex]</span>
+                            </a>
+                            <a class="h5" href="https://www.youtube.com/watch?v=FS1tJolGGV8" target="_blank">
+                                <span>[Video]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-9 col-sm-9 col-xs-12'>
+                    <p class='h4 font-weight-bold '><span class="font-italic">IROS 2022</span> Abstract</p>
+                    <p> 
+                        Although the manipulating of the unmanned
+                        aerial manipulator (UAM) has been widely studied, vision-based UAM approaching, which is crucial to the subsequent
+                        manipulating, generally lacks effective design. The key to
+                        the visual UAM approaching lies in object tracking, while
+                        current UAM tracking typically relies on costly model-based
+                        methods. Besides, UAM approaching often confronts more
+                        severe object scale variation issues, which makes it inappropriate to directly employ state-of-the-art model-free Siamesebased methods from the object tracking field. To address the
+                        above problems, this work proposes a novel Siamese network
+                        with pairwise scale-channel attention (SiamSA) for vision-based UAM approaching. Specifically, SiamSA consists of a
+                        pairwise scale-channel attention network (PSAN) and a scale-aware anchor proposal network (SA-APN). PSAN acquires
+                        valuable scale information for feature processing, while SA-APN mainly attaches scale awareness to anchor proposing.
+                        Moreover, a new tracking benchmark for UAM approaching,
+                        namely UAMT100, is recorded with 35K frames on a flying
+                        UAM platform for evaluation. Exhaustive experiments on the
+                        benchmarks and real-world tests validate the efficiency and
+                        practicality of SiamSA with a promising speed.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Video for SiamSA Evaluation and Real-World Tests</p>
+                </div>
+            </div>
+            <div class='row mt-3' >
+                <table align=center width=99%>
+	                <tr>
+	                    <td>
+	                      <center>
+                            <a href="https://www.youtube.com/watch?v=Fi6kESBBpnk" target="_blank" style="max-width:200px; margin-left:auto; margin-right:auto">
+                                <img src="files/TII_22_1460.jpg" alt="paper-snapshot" class="img-thumbnail" width="90%">
+                            </a>
+	                    </center>
+	                    </td>
+	                </tr>
+                    <tr>
+	                    <td width=80%>
+	                      <center>
+	                          <span style="font-size:14px"><i>Qualitative comparison on five sequences are included in this demo. Click for the video on Youtube. View on
+                                <a href="https://www.bilibili.com/video/BV1Me4y137eB" target="_blank">
+                                    <span>Bilibili</span>.
+                                </a>
+                                </i>
+	                    </center>
+	                    </td>
+	                </tr>
+	            </table>
+            </div>
+        </div>
+
+
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Video for IROS 2022 Presentation</p>
+                </div>
+            </div>
+            <div class='row mt-3'>
+                <table align=center width=99%>
+	                <tr>
+                        <td>
+                          <center>
+                            <a href="https://www.youtube.com/watch?v=FS1tJolGGV8" target="_blank" style="max-width:200px; margin-left:auto; margin-right:auto">
+                                <img src="files/IROS22_1564.jpg" alt="paper-snapshot" class="img-thumbnail" width="90%" >
+                            </a>
+                        </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width=80%>
+                        <center>
+                            <span style="font-size:14px"><i>The presentation of our work on IROS 2022. Click for the video on Youtube. View on</i>
+                                <a href="https://www.bilibili.com/video/BV1TR4y1y7fb" target="_blank">
+                                    <span>Bilibili</span>.
+                                </a>
+                            </i>
+                        </center>
+                        </td>
+                    </tr>
+	            </table>
+            </div>
+        </div>
+
+
+        <!-- Ack -->
+        <div>
+            <hr>
+
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <p class='h2'>Acknowledgements</p>
+		    <div class='text-left'>
+		    <p>
+                This work was supported by the National Natural Science Foundation
+                of China (No. 62173249), the Natural Science Foundation of Shanghai
+                (No. 20ZR1460100), and the Key R&D Program of Sichuan Province
+                (No. 2020YFSY0004).	
+
+                The code is implemented based on <a href="https://github.com/STVIR/pysot">pysot</a>, 
+                <a href="https://github.com/vision4robotics/SiamAPN">SiamAPN</a>, 
+                and <a href="https://github.com/ISosnovik/SiamSE">SiamSE</a>. 
+                We would like to express our sincere thanks to the contributors.
+                We would like to thank Ziang Cao for his advice on the code.
+                We appreciate the help from Fuling Lin, Haobo Zuo, and Liangliang Yao.
+                We would like to thank Kunhan Lu for his advice on TensorRT acceleration.
+            </p>
+		    
+		    <p>
+		    	The design of this project page was based on <a href="https://www.guandaoyang.com/PointFlow/" target="_blank">PointFlow</a> 
+                and <a href="https://marcbadger.github.io/avian-mesh/" target="_blank">avian-mesh</a>.
+		    </p>	
+
+        </div>
+    </body>
+</html>
+
