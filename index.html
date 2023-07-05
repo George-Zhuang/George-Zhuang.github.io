@@ -27,7 +27,18 @@
     
 </head>
 
+<style>
+    ul {
+      list-style-type: none;
+    }
+    
+    li:before {
+      content: "•";
+      margin-right: 8px;
+    }
+    </style>
 <body>
+
 
 <div class="container">
 
@@ -45,21 +56,27 @@
                         <h2>Guangze Zheng 郑光泽</h2>
                     </div>
                     <div class="row marketing">
-                        <p> Welcome to my homepage. 你好! Hi! Salut! Привет! やあ! 안녕!
+                        <p> 😀 Welcome to my homepage. 你好! Hi! Salut! Привет! やあ! 안녕!
                         </p>
-                        <p>
-                            I'm a Computer Science PhD student at the University of Hong Kong, advised by 
-                        <a href="https://www.cs.hku.hk/people/academic-staff/jpan">Prof. Jia Pan</a> and 
-                        <a href="https://www.cs.hku.hk/people/academic-staff/heming">Prof. Heming Cui</a>.
+                        <p> 🧑‍🎓 I'm a Computer Science PhD student at the University of Hong Kong, advised by 
+                            Prof. <a href="https://www.cs.hku.hk/people/academic-staff/jpan">Jia Pan</a> and 
+                            Prof. <a href="https://www.cs.hku.hk/people/academic-staff/heming">Heming Cui</a>.
                         My research interests include computer vision and robotics.
                         </p>
 
-                        <p> Now I'm working CV-based methods for collective behavior study of animals (especially <b>birds</b>) and <b>UAV</b>-related topics.
+                        <p> 
+                            🚀 <a href="https://github.com/George-Zhuang/AI-Flying"><b>AI-flying</b></a> 
+                            
+                            <br>
+                            Now I'm working on AI methods for flying agents (birds, UAVs, etc.).
+                            See my <a href="https://github.com/George-Zhuang/AI-Flying">project</a> if you are interested.
                             Please feel free to contact me for communication and cooperation!
                         </p>
+
                     </div>
+
                     <div class="row marketing">
-                        <p><b>Email: </b><a href="mailto:guangzezheng666@gmail.com">guangzezheng666@gmail.com</a>
+                        <p>📪 Email: <a href="mailto:guangzezheng666@gmail.com">guangzezheng666@gmail.com</a>
                             <a href="mailto:guangze@connect.hku.hk">guangze@connect.hku.hk</a>
                             <br>
                             [<a href="https://github.com/George-Zhuang">Github</a>]
@@ -68,18 +85,53 @@
                     </div>
                 </div>
         </div>
-        <div class="row marketing">
-            <!--Place holder-->
+        <div id="News" class="row marketing">
+            <div class="row" style="width:100%">
+                <div class="col-lg-12">
+                    <h4>🚀 News</h4>
+                    <hr>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    ✈️ (2023/07/04) We present <b>SAM-DA</b> [<a href="https://arxiv.org/abs/2307.01024">Paper</a>] 
+                    [<a href="https://github.com/vision4robotics/SAM-DA">Code</a>],
+                    a SAM-powered domain adaptation method for
+                    nighttime UAV tracking! With only <b>2.4</b> hours of training, the performance surpasses baseline
+                    with 12 hours of training, enabling the rapid deployment of nighttime UAV trakcing methods!
+                </li>
+            </ul>
         </div>
 
 
         <div id="Featured Publications" class="row marketing">
             <div class="row" style="width:100%">
                 <div class="col-lg-12">
-                    <h2>Featured Publications</h2>
+                    <h4>🌟 Featured Publications</h4>
                     <hr>
                 </div>
             </div>
+
+            <div class="row marketing mb-3">
+                <div class="col-lg-6">
+                    <img class="img-thumbnail" src="img/SAM-DA.jpg" style="width:100%;max-height:200px"/>
+                </div>
+
+                <div class="col-lg-6 mt-3">
+                    <h5><span class="font-italic">(Arxiv 2023)</span>
+                        SAM-DA: UAV Tracks Anything at Night with SAM-Powered Domain Adaptation
+                        [<a href="https://arxiv.org/abs/2307.01024">Paper</a>]
+                        [<a href="https://github.com/vision4robotics/SAM-DA">Code</a>]
+                        [<a href="https://github.com/vision4robotics/SAM-DA">Project Page</a>]
+                    </h5>
+                    <p>
+                    Liangliang Yao†, Haobo Zuo†,<b>Guangze Zheng†</b>, Changhong Fu, Jia Pan
+                    <hr>
+                    † equal contribution
+                    </p>
+                </div>
+            </div>
+
 
             <div class="row marketing mb-3">
                 <div class="col-lg-6">
@@ -141,38 +193,6 @@
 
             <div class="row marketing mb-3">
                 <div class="col-lg-6">
-                    <img class="img-thumbnail" src="img/SNOT.jpg" style="width:100%;max-height:200px"/>
-                </div>
-
-                <div class="col-lg-6 mt-3">
-                    <h5><span class="font-italic">(Arxiv 2022)</span>
-                        Siamese Object Tracking for Unmanned Aerial Vehicle: A Review and Comprehensive Analysis
-                        [<a href="https://arxiv.org/pdf/2205.04281.pdf">Paper</a>]
-                        [<a href="https://github.com/vision4robotics/SiameseTracking4UAV">Code</a>]
-                    </h5>
-                    <p>Changhong Fu, Kunhan Lu, <b>Guangze Zheng</b>, Junjie Ye, Ziang Cao, Bowen Li, and Geng Lu</p>
-                </div>
-            </div>
-
-            <div class="row marketing mb-3">
-                <div class="col-lg-6">
-                    <img class="img-thumbnail" src="img/DarkLighter_IROS.jpg" style="width:100%;max-height:200px"/>
-                </div>
-
-                <div class="col-lg-6 mt-3">
-                    <h5><span class="font-italic">(IROS 2021)</span>
-                        DarkLighter: Light up the Darkness for UAV Tracking
-                        [<a href="https://arxiv.org/pdf/2205.04281.pdf">Paper</a>]
-                        [<a href="https://github.com/vision4robotics/DarkLighter">Code</a>]
-                        [<a href="https://www.youtube.com/watch?v=rJtPST69J60">Video</a>]
-                        
-                    </h5>
-                    <p>Junjie Ye, Changhong Fu, <b>Guangze Zheng</b>, Ziang Cao, and Bowen Li</p>
-                </div>
-            </div>
-
-            <div class="row marketing mb-3">
-                <div class="col-lg-6">
                     <img class="img-thumbnail" src="img/MSCF_ICRA.jpg" style="width:100%;max-height:200px"/>
                 </div>
 
@@ -193,71 +213,70 @@
         <div id="Co-Authored Publications" class="row marketing">
             <div class="row" style="width:100%">
                 <div class="col-lg-12">
-                    <h2>Co-Authored Publications</h2>
+                    <h4>📰 Co-Authored Publications</h4>
                     <hr>
                 </div>
             </div>
-
-            <div class="row marketing mb-3">
-
-                <div class="col-lg-12 mt-3">
-                    <h5><span class="font-italic">(TGRS 2022)</span>
-                        DeconNet: End-to-End Decontaminated Network for Vision-Based Aerial Tracking
-                        [<a href="">Paper</a>]
-                        [<a href="https://github.com/vision4robotics/DeconNet">Code</a>]
-                    </h5>
-                    <p>Haobo Zuo, Changhong Fu, Sihang Li, Junjie Ye, and <b>Guangze Zheng</b></p>
-                </div>
-            </div>
-
-            <div class="row marketing mb-3">
-
-                <div class="col-lg-12 mt-3">
-                    <h5><span class="font-italic">(IROS 2022)</span>
-                        HighlightNet: Highlighting Low-Light Potential Features for Real-Time UAV Tracking
-                        [<a href="">Paper</a>]
-                        [<a href="https://github.com/vision4robotics/HighlightNet">Code</a>]
-                        [<a href="https://www.youtube.com/watch?v=KaS-kPvIy2k">Video</a>]
-                        
-                    </h5>
-                    <p>Changhong Fu, Haolin Dong, Junjie Ye, <b>Guangze Zheng</b>, Sihang Li, and Jilin Zhao</p>
-                </div>
-            </div>
-
-            <div class="row marketing mb-3">
-
-                <div class="col-lg-12 mt-3">
-                    <h5><span class="font-italic">(IROS 2022)</span>
+            <ul>
+                <li><span class="font-italic">(TGRS 2022)</span>
+                    DeconNet: End-to-End Decontaminated Network for Vision-Based Aerial Tracking
+                    [<a href="">Paper</a>]
+                    [<a href="https://github.com/vision4robotics/DeconNet">Code</a>]
+                </li>
+                <li><span class="font-italic">(TGRS 2022)</span>
+                    DeconNet: End-to-End Decontaminated Network for Vision-Based Aerial Tracking
+                    [<a href="">Paper</a>]
+                    [<a href="https://github.com/vision4robotics/DeconNet">Code</a>]
+                </li>
+                <li><span class="font-italic">(IROS 2022)</span>
+                    HighlightNet: Highlighting Low-Light Potential Features for Real-Time UAV Tracking
+                    [<a href="">Paper</a>]
+                    [<a href="https://github.com/vision4robotics/HighlightNet">Code</a>]
+                    [<a href="https://www.youtube.com/watch?v=KaS-kPvIy2k">Video</a>]
+                </li>
+                <li><span class="font-italic">(IROS 2022)</span>
+                    ResamplingNet: End-to-End Adaptive Feature Resampling Network for Real-Time Aerial Tracking
+                    [<a href="">Paper</a>]
+                    [<a href="https://github.com/vision4robotics/FDNT">Code</a>]
+                    [<a href="https://www.youtube.com/watch?v=_FtC6ZmSo3s">Video</a>]
+                </li>
+                <li>
+                    <span class="font-italic">(IROS 2022)</span>
                         ResamplingNet: End-to-End Adaptive Feature Resampling Network for Real-Time Aerial Tracking
                         [<a href="">Paper</a>]
                         [<a href="https://github.com/vision4robotics/FDNT">Code</a>]
                         [<a href="https://www.youtube.com/watch?v=_FtC6ZmSo3s">Video</a>]
-                    </h5>
-                    <p>Haobo Zuo, Changhong Fu, Sihang Li, Junjie Ye, and <b>Guangze Zheng</b></p>
-                </div>
-            </div>
-
-            <div class="row marketing mb-3">
-
-                <div class="col-lg-12 mt-3">
-                    <h5><span class="font-italic">(RAL 2022)</span>
+                </li>
+                <li>
+                    <span class="font-italic">(RAL 2022)</span>
                         Tracker Meets Night: A Transformer Enhancer for UAV Tracking
                         [<a href="https://ieeexplore.ieee.org/abstract/document/9696362">Paper</a>]
                         [<a href="https://github.com/vision4robotics/SCT">Code</a>]
                         [<a href="https://darktrack2021.netlify.app/">Dataset</a>]
                         [<a href="https://www.youtube.com/watch?v=Hm5olT0Ss-E">Video</a>]
-                    </h5>
-                    <p>Junjie Ye, Changhong Fu, Ziang Cao, Shan An, <b>Guangze Zheng</b>, and Bowen Li</p>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <span class="font-italic">(Arxiv 2022)</span>
+                        Siamese Object Tracking for Unmanned Aerial Vehicle: A Review and Comprehensive Analysis
+                        [<a href="https://arxiv.org/pdf/2205.04281.pdf">Paper</a>]
+                        [<a href="https://github.com/vision4robotics/SiameseTracking4UAV">Code</a>]
+                </li>
+                <li>
+                    <span class="font-italic">(IROS 2021)</span>
+                    DarkLighter: Light up the Darkness for UAV Tracking
+                    [<a href="https://arxiv.org/pdf/2205.04281.pdf">Paper</a>]
+                    [<a href="https://github.com/vision4robotics/DarkLighter">Code</a>]
+                    [<a href="https://www.youtube.com/watch?v=rJtPST69J60">Video</a>]
+                </li>
+    
 
-
+            </ul>
         </div>
 
         <div id="experiences" class="row marketing">
             <div class="row" style="width:100%">
                 <div class="col-lg-12">
-                    <h2>Experiences</h2>
+                    <h4>👷 Experiences</h4>
                     <hr>
                 </div>
             </div>
