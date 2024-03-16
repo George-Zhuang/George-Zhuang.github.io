@@ -1,35 +1,426 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>UAM Tracking</title>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173639674-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-173639674-1');
-	</script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    </head>
-    <body class="container" style="max-width:920px">
+    <title>NetTrack: Tracking Highly Dynamic Objects with a Net</title>
 
-        <!-- Title -->
-        <div>
-            <div class='row mt-5 mb-1'>
-                <div class='col text-center'>
-                    <p class="h2 font-weight-normal">NetTrack: Tracking Deformable Objects with a Net</p>
+    <meta name="description" content="CVPR 2024">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+    <link rel="icon" href="./files/icon.svg">
+    <link rel="stylesheet" href="./files/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/font-awesome.min.css">
+    <link rel="stylesheet" href="./files/codemirror.min.css">
+    <link rel="stylesheet" href="./files/app.css">
+
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-52J0PM8XKV');
+    </script>
+
+    <style>
+        .nav-pills {
+            position: relative;
+            display: inline;
+        }
+
+        .imtip {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1059.0" data-gr-ext-installed="">
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <strong>
+                    <font size="+3">NetTrack: Tracking Highly Dynamic Objects with a Net</font>
+                </strong>
+                <!-- <br> for open-world object tracking <br>  -->
+                <br><small>
+                    CVPR 2024
+                </small><br>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <br>
+                    <li>
+                        <font size="+1">Guangze Zheng</font>
+                    </li>
+                    <li>
+                        <font size="+1">Shijie Lin</font>
+                    </li>
+                    <li>
+                        <font size="+1">Haobo Zuo</font>
+                    </li>
+                    <li>
+                        <font size="+1">Changhong Fu</font>
+                    </li>
+                    <li>
+                        <font size="+1">Jia Pan*</font>
+                    </li>
+                    <br>
+                    <br><br>
+                    <a href="https://www.hku.hk/">
+                        <img src="./files/hku_logo.svg" height="50px"> </a>
+                    <a href="https://www.tongji.edu.cn/">
+                        <img src="./files/tongji_logo.png" height="50px"> </a>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href=".">
+                            <img src="./files/paper_small2.png" height="50px">
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=h81R1B8HuOE" savefrom_lm_index="2" savefrom_lm="1">
+                            <img src="./files/youtube_icon.png" height="50px">
+                            <h4><strong>Video</strong></h4>
+                        </a><span style="padding: 0; margin: 0; margin-left: 5px;"><a
+                                href="http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FUuKAp9a6wMs&amp;utm_source=chrome&amp;utm_medium=extensions&amp;utm_campaign=link_modifier"
+                                target="_blank" title="获取直链" savefrom_lm="1" savefrom_lm_is_link="1"
+                                style="background-image: url(&quot;data:image/gif;base64,R0lGODlhEAAQAOZ3APf39+Xl5fT09OPj4/Hx8evr6/3+/u7u7uDh4OPi497e3t7e3/z8/P79/X3GbuXl5ubl5eHg4WzFUfb39+Pj4lzGOV7LOPz7+/n6+vn5+ZTLj9/e387Ozt7f3/7+/vv7/ISbePn5+m/JV1nRKXmVbkCnKVrSLDqsCuDh4d/e3uDn3/z7/H6TdVeaV1uSW+bn5v39/eXm5eXm5kyHP/f39pzGmVy7J3yRd9/f3mLEKkXCHJbka2TVM5vaZn6Wdfn6+YG/c/r5+ZO/jeLi41aHTIeageLn4f39/vr6+kzNG2PVM5i+lomdf2CXYKHVmtzo2YXNeDqsBebl5uHh4HDKWN3g3kKqEH6WeZHTXIPKdnSPbv79/pfmbE7PHpe1l4O8dTO5DODg4VDLIlKUUtzo2J7SmEWsLlG4NJbFjkrJHP7+/VK5Nfz8+zmnC3KKa+Hg4OHh4Y63j/3+/eDg4Ojo6P///8DAwP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAHcALAAAAAAQABAAAAfWgHd2g4SFhYJzdYqLjIpzgx5bBgYwHg1Hk2oNDXKDFwwfDF5NLmMtcStsn4MhGT8YS04aGmU1QRhIGYMTADQAQlAODlloAMYTgwICRmRfVBISIkBPKsqDBAREZmcVFhYVayUz2IMHB1dWOmImI2lgUVrmgwUFLzdtXTxKSSduMfSD6Aik48MGlx05SAykM0gKhAAPAhTB0oNFABkPHg5KMIBCxzlMQFQZMGBIggSDpsCJgGDOmzkIUCAIM2dOhEEcNijQuQDHgg4KOqRYwMGOIENIB90JBAA7&quot;); background-repeat: no-repeat; width: 16px; height: 16px; display: inline-block; border: none; text-decoration: none; padding: 0px; position: relative;"></a></span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/George-Zhuang/NetTrack">
+                            <img src="./files/github.png" height="50px">
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/140mPnOVZY-2apH76at9yYuVGIDWOvsH_?usp=sharing">
+                            <img src="./files/Google-Drive-logo-768x432.png" height="50px">
+                            <h4><strong>Dataset</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pan.baidu.com/s/1Ztu8-JJLFHmMkJyWrJQ8lQ?pwd=bft5">
+                            <img src="./files/baidupan_logo.png" height="50px">
+                            <h4><strong>Dataset</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.alipan.com/s/NFkpgDDw6R3">
+                            <img src="./files/alipan_logo.png" height="50px">
+                            <h4><strong>Dataset</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div style="text-align: center;">
+                    <video width="80%" controls>
+                        <source src="./files/output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify" style="text-indent: 2em;">
+                    The complex dynamicity of open-world objects presents non-negligible challenges for multi-object
+                    tracking (MOT), often manifested as severe deformations,
+                    fast motion, and occlusions. Most methods that solely depend on coarse-grained object cues, such as
+                    boxes and the overall appearance of the object,
+                    are susceptible to degradation due to distorted internal relationships of dynamic objects. To
+                    address this problem, this work proposes <strong>NetTrack</strong>,
+                    an efficient, generic, and affordable tracking framework to introduce fine-grained learning that is
+                    robust to dynamicity. Specifically, NetTrack constructs
+                    a dynamicity-aware association with a fine-grained <strong>Net</strong>, leveraging point-level
+                    visual cues. Correspondingly, a fine-grained sampler and
+                    matching method have been incorporated. Furthermore, NetTrack learns object-text correspondence for
+                    fine-grained localization. To evaluate MOT in extremely
+                    dynamic open-world scenarios, a bird flock tracking (<strong>BFT</strong>) dataset is constructed,
+                    which exhibits high dynamicity with diverse species and
+                    open-world scenarios. Comprehensive evaluation on BFT validates the effectiveness of fine-grained
+                    learning on object dynamicity, and thorough transfer experiments
+                    on challenging open-world benchmarks, i.e., TAO, TAO-OW, AnimalTrack, and GMOT-40, validate the
+                    strong generalization ability of NetTrack even without finetuning.
+                </p>
+                <p style="text-align:center;">
+                    <img src="./files/fig1_conf.jpg" class="img-responsive">
+                </p>
+                <br>
+                <strong>a</strong> The visualization of the proposed NetTrack is similar to a <strong>Net</strong>.
+                Object dynamicity
+                distorts the internal relationships of the object, presenting challenges for traditional coarse-grained
+                tracking methods that rely solely on bounding boxes. While NetTrack introduces fine-grained Nets that
+                are robust to dynamicity.
+                <strong>b</strong> Qualitative results of NetTrack tracking highly dynamic objects under <em>open-world
+                    tracking</em> and <em>referring expression comprehension</em> settings. Dynamicity like deformation
+                and fast
+                motion results in drastic changes in the coarse-grained representation, while the fine-grained Nets can
+                contract robustly.
+                The dashed boxes represent the object position from the previous time step.
+                <strong>c</strong> We propose a challenging benchmark named BFT, dedicated to evaluating highly dynamic
+                object
+                tracking with abundant scenarios shown in the external circular and diverse species shown in the central
+                word cloud.
+                <br>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <iframe width="600" height="330" src="https://www.youtube.com/embed/h81R1B8HuOE?si=6bgoNCkJUEIUjTJY"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
             </div>
-	    </div>
-    </body>
-</html>
+        </div>
 
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <br>
+                <h3>
+                    Approach
+                </h3>
+                <p class="text-justify">
+                    The high dynamicity of open-world objects, manifested as severe deformation, fast motion, and
+                    frequent occlusion, poses challenges for existing methods in two major aspects:
+                    <br>
+                    1) <strong>Association</strong> For most methods relying solely on coarse-grained visual
+                    representations, the high dynamicity renders the temporal continuity fragile in terms of
+                    association.
+                    <br>
+                    2) <strong>Localization</strong> SoTA
+                    methods typically learn the coarse-grained correspondence between the
+                    entire image and text in pre-training, where the dynamic objects are hard to localize.
+                    <br><br>
+                    In this work, we propose NetTrack, introducing fine-grained learning to address the above two
+                    aspects.
+                    Regarding association, NetTrack utilizes physical points on the object's appearance that are less
+                    susceptible to object dynamicity and form fine-grained visual cues. For localization, grounded
+                    pre-training is utilized to learn fine-grained correspondences between objects and text.
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="files/det.jpg" class="img-responsive" style="height: 300px;">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="files/asso_conf.jpg" class="img-responsive" style="height: 300px;">
+                    </div>
+                </div>
+                <br>
+                <strong>Object-text correspondence for fine-grained localization</strong>
+                This work adopts phrase grounding as pre-training method. Compared to CLIP-based tracking methods that
+                utilize coarse-grained image-text correspondence, NetTrack can more effectively distinguish dynamic
+                objects. NetTrack can also learn contextual information from LLM to achieve practical real-world
+                applications for efficient dynamic object tracking.
+                <br>
+                <strong>Fine-grained Net for dynamicity-aware association</strong>
+                NetTrack tracks the object with a fine-grained Net, which leverages points of interest (POIs) on the
+                surface of object appearance. We design a fine-grained sampler to discover potential POIs and utilize
+                fine-grained visual cues of these points, along with the emerging physical point tracking
+                methods for robust tracking. Subsequently, a simple yet effective fine-grained similarity calculation
+                method is proposed to determine the containment relationship between the tracked POIs and candidate
+                objects.
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Data
+                </h3>
+                <p style="text-align:center;">
+                    <img src="./files/dataset_conf.jpg" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    <strong>a</strong>
+                    Bird flocks are among the most dynamic objects to track in the open world and thus are considered
+                    ideal subjects for this work. We construct BFT dataset, which incorporates 22 bird species and 14
+                    common natural and cultural scenes, covering six continents. After careful data curation and
+                    annotation, the BFT dataset contains 106 videos, split into 35/25/36 for train/val/test.
+                    <strong>b</strong>
+                    The severe aspect ratio change of objects in BFT dataset is shown, which demonstrates the high
+                    dynamicity.
+                    <strong>c</strong>
+                    The large object motion also shows the high dynamicity of the BFT dataset.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results
+                </h3>
+                <p style="text-align:center;">
+                    <img src="./files/bft.jpg" class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    The experimental results mainly demonstrate that:
+                    <strong>1)</strong> Even in the zero-shot open-world tracking setting, NetTrack achieves superior
+                    performance
+                    compared to SoTA finetuned closed-set trackers.
+                    <strong>2)</strong> In comparison to the results after fine-tuning (lines 9-12), closed-set trackers
+                    exhibit
+                    sub-optimal zero-shot generalization ability (lines 13,14,17,18) in highly dynamic open-world
+                    scenarios.
+                    <br>
+                    For more details, please refer to our paper.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-12 col-md-offset-1">
+                    <div class="CodeMirror cm-s-default CodeMirror-wrap">
+                        <div
+                            style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 4px;">
+                            <textarea autocorrect="off" autocapitalize="off" spellcheck="false"
+                                style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
+                                tabindex="0"></textarea>
+                        </div>
+                        <div class="CodeMirror-vscrollbar" cm-not-content="true">
+                            <div style="min-width: 1px; height: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-hscrollbar" cm-not-content="true">
+                            <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-scroll" tabindex="-1">
+                            <div class="CodeMirror-sizer"
+                                style="margin-left: 0px; margin-bottom: -15px; border-right-width: 15px; min-height: 125px; padding-right: 0px; padding-bottom: 0px;">
+                                <div style="position: relative; top: 0px;">
+                                    <div class="CodeMirror-lines">
+                                        <div style="position: relative; outline: none;">
+                                            <div class="CodeMirror-measure">AخA</div>
+                                            <div class="CodeMirror-measure"></div>
+                                            <div style="position: relative; z-index: 1;"></div>
+                                            <div class="CodeMirror-cursors">
+                                                <div class="CodeMirror-cursor"
+                                                    style="left: 4px; top: 0px; height: 17.1354px;">&nbsp;</div>
+                                            </div>
+                                            <div class="CodeMirror-code" style="">
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;">@inproceedings{nettrack2024cvpr,</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  title={NetTrack: Tracking Dynamic Objects with a Net},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  author={Guangze<span class="cm-tab" role="presentation" cm-text="	"> </span>Zheng and Shijie Lin and Haobo Zuo and Changhong Fu and Jia Pan},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  year={2024},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  pages={1-8},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="position: absolute; height: 15px; width: 1px; top: 282px;"></div>
+                            <div class="CodeMirror-gutters" style="display: none; height: 297px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div id="open-source" class="col-md-8 col-md-offset-2">
+                <h3>
+                    Open Source
+                </h3>
+                <p class="text-justify">
+                    The NetTrack code and BFT dataset are under CC-BY-NC-SA 4.0 license.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    This project is supported by the Innovation and Technology Commission of the HKSAR Government under
+                    the InnoHK initiative, ITF GHP/126/21GD and HKU's CRF seed grant. The authors would like to thank
+                    Dr. Ming-Shan Wang for his advice.
+                    <br><br>
+                    The website design is inspired by <a href="https://robotics-transformer1.github.io/">RT-1</a>, whose
+                    template was borrowed from <a href="http://jonbarron.info/">Jon Barron</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open">
+        <style>
+            div.grammarly-desktop-integration {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            div.grammarly-desktop-integration:before {
+                content: attr(data-content);
+            }
+        </style>
+        <div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration"
+            data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}">
+        </div>
+    </template></grammarly-desktop-integration>
+
+</html>
