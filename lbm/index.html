@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity</title>
+
+    <meta name="description" content="Arxiv 2025">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+    <link rel="stylesheet" href="./files/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/font-awesome.min.css">
+    <link rel="stylesheet" href="./files/codemirror.min.css">
+    <link rel="stylesheet" href="./files/app.css">
+
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-52J0PM8XKV');
+    </script>
+
+    <style>
+        body {
+            font-size: 18px; 
+        }
+        
+        strong {
+            font-weight: 600; 
+            font-size: 1.05em; 
+            color: #2c3e50; 
+        
+        h1 strong, h2 strong, h3 strong {
+            font-size: 1.1em; 
+            font-weight: 700; 
+        }
+        
+        p strong {
+            font-size: 1.08em; 
+            line-height: 1.4; 
+        }
+        
+        .nav-pills {
+            position: relative;
+            display: inline;
+        }
+
+        .imtip {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <meta http-equiv="origin-trial"
+        content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1059.0" data-gr-ext-installed="">
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center" style="margin-top: 60px;">
+                <strong>
+                    <font size="+3">Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity</font>
+                </strong>
+                <br><small>
+                    Arxiv 2025
+                </small><br>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <br>
+                    <li>
+                        <font size="+1"><a href="https://scholar.google.com/citations?user=-kcZWRQAAAAJ" target="_blank" style="color: #4A90E2; text-decoration: none;">Guangze Zheng</a></font><sup>1</sup>
+                    </li>
+                    <li>
+                        <font size="+1"><a href="https://scholar.google.com/citations?user=sQINQ-YAAAAJ" target="_blank" style="color: #4A90E2; text-decoration: none;">Shijie Lin</a></font><sup>1</sup>
+                    </li>
+                    <li>
+                        <font size="+1"><a href="https://scholar.google.com/citations?user=5RhJGKgAAAAJ" target="_blank" style="color: #4A90E2; text-decoration: none;">Haobo Zuo</a></font><sup>1</sup>
+                    </li>
+                    <li>
+                        <font size="+1"><a href="https://openreview.net/profile?id=~Si_Si2" target="_blank" style="color: #4A90E2; text-decoration: none;">Si Si</a></font><sup>2</sup>
+                    </li>
+                    <li>
+                        <font size="+1"><a href="https://scholar.google.com/citations?user=bgOWPGwAAAAJ" target="_blank" style="color: #4A90E2; text-decoration: none;">Ming-Shan Wang</a></font><sup>2</sup>
+                    </li>
+                    <li>
+                        <font size="+1"><a href="https://scholar.google.com/citations?user=zmbMZ4kAAAAJ" target="_blank" style="color: #4A90E2; text-decoration: none;">Changhong Fu</a></font><sup>3</sup>
+                    </li>
+                    <li>
+                        <font size="+1"><a href="https://scholar.google.com/citations?user=YYT8-7kAAAAJ" target="_blank" style="color: #4A90E2; text-decoration: none;">Jia Pan</a></font><sup>1</sup>
+                    </li>
+                    <br>
+                </ul>
+                <ul class="list-inline" style="margin-top: -20px;">
+                    <br>
+                    <li>
+                        <sup>1</sup><font>The University of Hong Kong</font>
+                    </li>
+                    <li>
+                        <sup>2</sup><font>Institute of Zoology, Chinese Academy of Sciences</font>
+                    </li>
+                    <li>
+                        <sup>3</sup><font>Tongji University</font>
+                    </li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href=".">
+                            <img src="./files/paper.jpg" height="50px">
+                            <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/George-Zhuang/LBM">
+                            <img src="./files/github.png" height="50px">
+                            <h4><strong>Code</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://huggingface.co/ZhengGuangze/LBM">
+                            <img src="./files/huggingface.svg" height="45px">
+                            <h4><strong>Model</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=d3YXxdgkEso" savefrom_lm_index="2" savefrom_lm="1">
+                            <img src="./files/youtube_icon.png" height="50px">
+                            <h4><strong>Video</strong></h4>
+                        </a><span style="padding: 0; margin: 0; margin-left: 5px;"><a
+                                href="http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FUuKAp9a6wMs&amp;utm_source=chrome&amp;utm_medium=extensions&amp;utm_campaign=link_modifier"
+                                target="_blank" title="获取直链" savefrom_lm="1" savefrom_lm_is_link="1"
+                                style="background-image: url(&quot;data:image/gif;base64,R0lGODlhEAAQAOZ3APf39+Xl5fT09OPj4/Hx8evr6/3+/u7u7uDh4OPi497e3t7e3/z8/P79/X3GbuXl5ubl5eHg4WzFUfb39+Pj4lzGOV7LOPz7+/n6+vn5+ZTLj9/e387Ozt7f3/7+/vv7/ISbePn5+m/JV1nRKXmVbkCnKVrSLDqsCuDh4d/e3uDn3/z7/H6TdVeaV1uSW+bn5v39/eXm5eXm5kyHP/f39pzGmVy7J3yRd9/f3mLEKkXCHJbka2TVM5vaZn6Wdfn6+YG/c/r5+ZO/jeLi41aHTIeageLn4f39/vr6+kzNG2PVM5i+lomdf2CXYKHVmtzo2YXNeDqsBebl5uHh4HDKWN3g3kKqEH6WeZHTXIPKdnSPbv79/pfmbE7PHpe1l4O8dTO5DODg4VDLIlKUUtzo2J7SmEWsLlG4NJbFjkrJHP7+/VK5Nfz8+zmnC3KKa+Hg4OHh4Y63j/3+/eDg4Ojo6P///8DAwP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAHcALAAAAAAQABAAAAfWgHd2g4SFhYJzdYqLjIpzgx5bBgYwHg1Hk2oNDXKDFwwfDF5NLmMtcStsn4MhGT8YS04aGmU1QRhIGYMTADQAQlAODlloAMYTgwICRmRfVBISIkBPKsqDBAREZmcVFhYVayUz2IMHB1dWOmImI2lgUVrmgwUFLzdtXTxKSSduMfSD6Aik48MGlx05SAykM0gKhAAPAhTB0oNFABkPHg5KMIBCxzlMQFQZMGBIggSDpsCJgGDOmzkIUCAIM2dOhEEcNijQuQDHgg4KOqRYwMGOIENIB90JBAA7&quot;); background-repeat: no-repeat; width: 16px; height: 16px; display: inline-block; border: none; text-decoration: none; padding: 0px; position: relative;"></a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div style="text-align: center;">
+                    <video height="400" controls>
+                        <source src="./files/output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify" style="text-indent: 2em;">
+                    This work proposes the Lattice Boltzmann Model (LBM) to learn real-world pixel dynamicity for visual tracking. LBM decomposes visual representations into dynamic pixel lattices and solves pixel motion states through collision-streaming processes. Specifically, the high-dimensional distribution of the target pixels is acquired through a multilayer <strong>predict-update</strong> network to estimate the pixel positions and visibility. The predict stage formulates lattice collisions among the spatial neighborhood of target pixels and develops lattice streaming within the temporal visual context. The update stage rectifies the pixel distributions with online visual representations. Compared with existing methods, LBM demonstrates practical applicability in an <strong>online</strong> and <strong>real-time</strong> manner, which can efficiently adapt to real-world visual tracking tasks. Comprehensive evaluations of real-world point tracking benchmarks such as TAP-Vid and RoboTAP validate LBM's efficiency. A general evaluation of large-scale open-world object tracking benchmarks such as TAO, BFT, and OVT-B further demonstrates LBM's real-world practicality.
+                </p>
+                <p style="text-align:center;">
+                    <img src="./files/demo.gif" class="img-responsive"  style="max-height: 400px; width: auto; height: auto;">
+                </p>
+                <br>
+                Real-world <strong>object dynamicity → pixel dynamicity → fluid dynamicity</strong>. The object dynamicity
+                in the open world manifests through deformation and self-occlusion, as exemplified by the bird in the figure.
+                From a visual perspective, such object dynamicity can be decomposed into pixel dynamicity. The pixels are
+                subsequently modeled as fluid lattices that simulate hydrodynamic streaming and collision processes, and the
+                pixel motion states are efficiently addressed with the proposed lattice Boltzmann model.
+                <br>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <br>
+                <h3>
+                    Method
+                </h3>
+                <div style="text-align: center;">
+                    <video height="400" controls>
+                        <source src="./files/method.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="text-justify">
+                    LBM aims to efficiently track arbitrary pixels. Its core principle employs the <strong>lattice Boltzmann method</strong> from computational fluid dynamics, treating pixels as fluid particles and mimicking their motion to achieve pixel tracking.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Results
+                </h3>
+                <p style="text-align:center;">
+                    <img src="./files/efficiency.jpg" class="img-responsive" style="max-height: 300px; width: auto; height: auto;">
+                </p>
+                <p class="text-justify">
+                    <strong>Efficiency</strong> comparison on TAP-Vid DAVIS benchmark with an <strong>NVIDIA Jetson Orin NX super</strong>. LBM shows efficiency with higher inference speed and smaller model size. Size of circles corresponds to the number of parameters. With TensorRT, LBM achieves <strong>~49 FPS</strong> on Jetson Orin NX. For more details, please refer to our paper.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <iframe width="711" height="400" src="https://www.youtube.com/embed/d3YXxdgkEso?si=sTJ4BL7EWIFpv9ND"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-12 col-md-offset-1">
+                    <div class="CodeMirror cm-s-default CodeMirror-wrap">
+                        <div
+                            style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 4px;">
+                            <textarea autocorrect="off" autocapitalize="off" spellcheck="false"
+                                style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
+                                tabindex="0"></textarea>
+                        </div>
+                        <div class="CodeMirror-vscrollbar" cm-not-content="true">
+                            <div style="min-width: 1px; height: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-hscrollbar" cm-not-content="true">
+                            <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                        </div>
+                        <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                        <div class="CodeMirror-scroll" tabindex="-1">
+                            <div class="CodeMirror-sizer"
+                                style="margin-left: 0px; margin-bottom: -15px; border-right-width: 15px; min-height: 125px; padding-right: 0px; padding-bottom: 0px;">
+                                <div style="position: relative; top: 0px;">
+                                    <div class="CodeMirror-lines">
+                                        <div style="position: relative; outline: none;">
+                                            <div class="CodeMirror-measure">AخA</div>
+                                            <div class="CodeMirror-measure"></div>
+                                            <div style="position: relative; z-index: 1;"></div>
+                                            <div class="CodeMirror-cursors">
+                                                <div class="CodeMirror-cursor"
+                                                    style="left: 4px; top: 0px; height: 17.1354px;">&nbsp;</div>
+                                            </div>
+                                            <div class="CodeMirror-code" style="">
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;">@inproceedings{lattice2025zheng,</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  title={Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  author={Guangze<span class="cm-tab" role="presentation" cm-text="	"> </span>Zheng and Shijie Lin and Haobo Zuo and Si Si and Ming-Shan Wang and Changhong Fu and Jia Pan},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  booktitle={arXiv preprint arXiv},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  year={2025},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  pages={1-8},</span></pre>
+                                                <pre
+                                                    class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="position: absolute; height: 15px; width: 1px; top: 282px;"></div>
+                            <div class="CodeMirror-gutters" style="display: none; height: 297px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div id="open-source" class="col-md-10 col-md-offset-1">
+                <h3>
+                    Open Source
+                </h3>
+                <p class="text-justify">
+                    The LBM code and model are under Apache License.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website design is inspired by <a href="https://robotics-transformer1.github.io/">RT-1</a>, whose
+                    template was borrowed from <a href="http://jonbarron.info/">Jon Barron</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open">
+        <style>
+            div.grammarly-desktop-integration {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            div.grammarly-desktop-integration:before {
+                content: attr(data-content);
+            }
+        </style>
+        <div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration"
+            data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}">
+        </div>
+    </template></grammarly-desktop-integration>
+
+</html>
